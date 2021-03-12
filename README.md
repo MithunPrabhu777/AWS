@@ -59,8 +59,57 @@ AWS pricing calculator
 Estimate the cost for your architecture solution.
 
 
-
 Day-2
+
+amazon ec2 configure in some region
+finally total pricing will come for particular configuration then u can estimate amount for configuration.
+
+AWS free-tier account
+search for aws free tier in browser
+if you particular service you can filter by checking box
+create a free account
+
+u can put billing alarms ,,,if u put $5 it will give alarm u are approaching $5.
+ for self study can use account type as personal and fill form.
+ then payment information then security check.then verify code using sms.
+ support plans free.i.e basic
+ then u can signin
+ sign in using root user email
+ next
+ password then signup
+ then u will get AWS Management Console.
+ 
+ 
+Create a billing alarm
+
+In aws management console
+
+aws services ----- put billing  ---- go to billing preferences ---- then check receive billing alerts ---  receive free-tier usage alerts  ---- put email-address  --- it will send alram to that email about billing --- save preferences.
+
+u can search services ---  then u select in management and governance select amazon cloudwatch ---- its a performance monitoring tool. alarm will be triggered when service reaches threshhold. U can select region where ur application wants to configure in. For billing always have to choose US-East North Verginia.
+
+then choose alarm ----- select a metric ----- go to billing ----  total estimated charge --USD by the way ---- select metric --- mention $1 --- get notification in that mail --- next ----- amazon sms is a service --- create a topic --- send a notification to ----- Billing notification ----  open in sns console.  ---  confirm subscription in your mail ---- subscription confirmed.
+
+Alarm name ---- Billing_Alarm  ---- next  ---- create alarm.....!!!!! thats it...
+
+
+
+IAM OVERVIEW
+
+AWS Identity and Access Management Service(IAM)
+where IAM policy will be applied to IAM user or IAM group. ///entity person or service.
+
+IAM only tells allow only amazon ec2 u can mention it,,,so u cant access other services without IAM permission.
+
+If it is IAM group its very difficult to manage or giving access to diffeerent users in group.
+
+Authentication Methods
+
+
+
+
+
+
 
 
 
