@@ -103,13 +103,56 @@ IAM only tells allow only amazon ec2 u can mention it,,,so u cant access other s
 
 If it is IAM group its very difficult to manage or giving access to diffeerent users in group.
 
+
+Day - 3
+
+
 Authentication Methods
 
+1.access key for api ---- to manage resources.
+2.IAM user ---- password ---- AWS management console.
+
+Create IAM user and Group
+
+IAM policy ----- user
+IAM policy  ----- IAM group
+IAM policy  ----- Each(IAM) role.
+
+AWS Management Console  ----- services -----security,Identity and compliances ---- IAM --- chane signin link ---- customize ----Account --- dct-cloudbeginner 
+AWS Management Console  ----- services -----security,Identity and compliances ---- IAM --- Groups --- create a group ---- Admins --- next --- Attach policy --- Administrator Access  ---- next ---  create group ---- check admins  --- Permissions  --- Show Policy  ---- small json policy will get 
+
+AWS Management Console  ----- services -----security,Identity and compliances ---- IAM --- Users ---- add user --- user name  --- access type ----- AWS managemenyt console --- custom password ----  next  --- add user to group ---- check on  admins group ----  next  ---- review --- user created.
+
+now user can access AWS management console using sign-in link https://asbk.kfdn/flkmked/f.kemkf
+
+logout from root user
+
+run that url   ----  IAM user name  ---- password  --- signin --- AWS management console --- if u try to access billing service --- You get warning that  --- You need permission.
+
+Amazon Virtual Private Cloud(VPC)
+
+REGION ---  VPC  -----  AVALABILITY ZONE  ---- PUBLIC SUBNET  ----  EC2 INSTANCE 
+                                          ---- Private subnet -----
+                                          
+EACH AVAILABILITY ZONE CONNECTED WITH ROUTER.
+
+REGION HAS INTERNET GATEWAY.
+
+YOU CAN ACCESS PUBLIC EC2 INSTANCE THROUGH INTERNET GATEWAY
+BUT CAN ACCESS PRIVATE EC2 INSTANCE THROUGH PRIVATE KEY ONLY.
+
+MULTIPLE VPCs  /// You can create multiple VPCs within each region.
+
+Each VPC has different block of IP addresses.   ---  CIDR 172.31.0.0/16   --- Classless InterDomain Routing 
+
+Each subnet has block of IP adresses from CIDR block.
+
+AWS Management console --- Services ---- Networking and Content Delivery ----  VPC ---- U will get Resources by region --- Your VPCs ---- default VPCs is created --- available --- CIDR blocks  --- address space  ----  172.31.0.0/16 ---- associated.
 
 
+AWS Management console --- Services ---- Networking and Content Delivery ----  VPC ---- U will get Resources by region ---  subnets  --- analyze.
 
-
-
+Resources will change for each region. u may have less subnets in other region.
 
 
 
