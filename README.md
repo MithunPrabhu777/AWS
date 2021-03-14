@@ -156,6 +156,8 @@ Resources will change for each region. u may have less subnets in other region.
 
 AWS Management console --- Services ---- Networking and Content Delivery ----  VPC ---- U will get Resources by region ---  route tables ---- routes/subnet associates
 
+Day -4 
+
 SECURITY GROUPS AND NETWORK ACL'S
 
 Images are uploaded in issue section for more details.
@@ -171,5 +173,15 @@ Web Server <------------- Firewall <-------------- Client
 (10.2.1.10)                                     (10.1.1.1)  
 
 
-stateful firewall allows return traffic automatically
-stateless firewall checks for allow rule for both connections.
+stateful firewall allows return traffic automatically.           //////  In AWS world Security Group is stateful firewall
+stateless firewall checks for allow rule for both connections.   //////  Network ACL is stateless firewall.
+
+Security Group                          Network ACL
+1.stateful                              stateless
+2.Evaluates all rules                   Processes rules in order.
+3.with a group                          subnets associated with
+4.operates at instance                  opearates at subnet level
+
+
+
+
