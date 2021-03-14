@@ -183,5 +183,9 @@ Security Group                          Network ACL
 4.operates at instance                  opearates at subnet level
 
 
+AWS Public and Private Services
 
+Image in local storage
+
+Public Internet is connected with Amazon DynamoDB ,,,Aazon S3,,,,Amazon Route S3,,,, Amazon CloudFront and is connected to VPC through Internet Gateway.
 
