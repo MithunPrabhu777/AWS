@@ -154,5 +154,8 @@ AWS Management console --- Services ---- Networking and Content Delivery ----  V
 
 Resources will change for each region. u may have less subnets in other region.
 
+AWS Management console --- Services ---- Networking and Content Delivery ----  VPC ---- U will get Resources by region ---  route tables ---- routes/subnet associates
+
+SECURITY GROUPS AND NETWORK ACL'S
 
 
