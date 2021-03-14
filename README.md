@@ -158,4 +158,18 @@ AWS Management console --- Services ---- Networking and Content Delivery ----  V
 
 SECURITY GROUPS AND NETWORK ACL'S
 
+Images are uploaded in issue section for more details.
 
+stateful and stateless firewalls:
+
+webserver will be protected by firewall from client.
+
+             Dest Port:80           Src Port:65188
+Web Server <------------- Firewall <-------------- Client
+           -------------->         --------------->
+           Src Port: 80            Dest Port:65188
+(10.2.1.10)                                     (10.1.1.1)  
+
+
+stateful firewall allows return traffic automatically
+stateless firewall checks for allow rule for both connections.
