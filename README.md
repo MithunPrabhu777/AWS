@@ -229,4 +229,43 @@ Elastic IP address:
 4.Can be moved between instances and Elastic Network Adapters.
 
 
+Public Subnets details can be get in issues in the form of image.
+
+Private subnets will have Private IP for both instances.
+
+(Network Access Translation Gateway) ----  forwards connections to internet.
+
+Launching an Amazon EC2 instance
+
+Amazon Machine Image(AMI) will generate EBS snapshot in Linux or Windows.
+
+Instance Type:
+
+Family              Type           vCPUs       Memory(GiB)
+General Purpose     t2.micro       1           1
+Compute optimized   c5n.large      2           5.25
+Memory optimized    r5ad.large     2           16
+Storage optimized   d2.xlarge      4           30.5
+GPU instances       g2.2xlarge     8           15
+
+AWS Management Console ---- Services ---- Compute ---- EC2 ----- Limits/AMIs/Launch Templates 
+
+everything in the dashboard. try everything.
+
+Launch Instance......   -----  choose a Amazon Machine Image(AMI)
+1.RedHat Linux
+2.SUSE Linux
+3.Amazo Linux
+4.Ubuntu Server
+5.Microsoft Windows Server
+6.Microsoft Windows with SQL server installed
+                   Lot Of Options..............
+                   
+My AMIs --- you can create your own AMI
+MarketPlace or u can use Community AMIs
+
+Go to Quick Start and Choose -----  Amazon Linux 2 AMI --- select ---- Default is General Purpose /t2.micro  -----  free tier ---- Next configure ---- Add storage ---- By default it will create 8GB elastic Block Store having General Purpose SSD. ----- Next ----- Add Tag --- Dept --- Development --- now --- next configure security group ---  Name:Web Access ---- Review And Launch ---- Launch --------Create a new Key Pair ---- 
+
+
+
 
