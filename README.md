@@ -187,5 +187,46 @@ AWS Public and Private Services
 
 Image in local storage
 
-Public Internet is connected with Amazon DynamoDB ,,,Aazon S3,,,,Amazon Route S3,,,, Amazon CloudFront and is connected to VPC through Internet Gateway.
+Public Internet is connected with Amazon DynamoDB ,,,Amazon S3,,,,Amazon Route S3,,,, Amazon CloudFront and is connected to VPC through Internet Gateway.
+
+Day - 5
+
+If EC2 instance want to collect data from Amazon S3 then it will connect through internet gateway.and is protected by VPC(Private Cloud).
+
+INSTALL AWS COMMAND LINE INTERFACE
+
+Section - 2  ----   Amazon Elastic Compute Cloud(EC2)
+
+This is one of the oldest service in AWS standing till today.(To launch virtual services)
+
+Amazon EC2 Overview
+
+There will be lot of ec2 instances in EC2 Host Server.
+Instances are virtual server or virtual machine which contains application or website running and Operating System(Windows or Linux) and also contains certain amount of CPU,RAM,Drive Space and Network Interface Bandwidth.
+
+EC2 Instance need a IP address.
+
+EC2 hosts are managed by AWS.
+
+Public,Private and Elastic IP addresses.
+
+If instance is in Public Subnet that instance will get public IP address.
+
+Public IP address:
+1.Lost when instance is stopped.
+2.Used in Public Subnets
+3.No charge
+4.Associated with private IP address on instance.
+
+Private IP address:
+1.Retained when instance stopped
+2.Used in Public and Private Subnets
+
+Elastic IP address:
+1.Static Public IP address
+2.You are charged if not used
+3.Associated with private IP address on instance
+4.Can be moved between instances and Elastic Network Adapters.
+
+
 
