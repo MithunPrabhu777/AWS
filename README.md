@@ -255,7 +255,7 @@ everything in the dashboard. try everything.
 Launch Instance......   -----  choose a Amazon Machine Image(AMI)
 1.RedHat Linux
 2.SUSE Linux
-3.Amazo Linux
+3.Amazon Linux
 4.Ubuntu Server
 5.Microsoft Windows Server
 6.Microsoft Windows with SQL server installed
@@ -264,8 +264,83 @@ Launch Instance......   -----  choose a Amazon Machine Image(AMI)
 My AMIs --- you can create your own AMI
 MarketPlace or u can use Community AMIs
 
-Go to Quick Start and Choose -----  Amazon Linux 2 AMI --- select ---- Default is General Purpose /t2.micro  -----  free tier ---- Next configure ---- Add storage ---- By default it will create 8GB elastic Block Store having General Purpose SSD. ----- Next ----- Add Tag --- Dept --- Development --- now --- next configure security group ---  Name:Web Access ---- Review And Launch ---- Launch --------Create a new Key Pair ---- 
+Go to Quick Start and Choose -----  Amazon Linux 2 AMI --- select ---- Default is General Purpose /t2.micro  -----  free tier ---- Next configure ---- Add storage ---- By default it will create 8GB elastic Block Store having General Purpose SSD. ----- Next ----- Add Tag --- Dept --- Development --- now --- next configure security group ---  Name:Web Access ---- Review And Launch ---- Launch --------Create a new Key Pair ----  
 
+Day - 6
 
+Public key will genearated by AWS and private key should be we must download.Need to give private key when it is required.
+
+Key pair name --- sydney-KP ---- download key pair --- launch instances --- view instances --- 
+
+You can see that instance will have instance id etc etc,,,just analyze it..
+
+You can monitor instance
+
+-------------------------------
+
+Connecting to Amazon EC2 Instance
+
+so to check whether running instance is remote or not we can change region to singapore --- launch instance ---  Microsoft Windows Server 2019 Base --- t2.micro --- next -- security group --- Web-Access ---- review ---- launch --- create new key pair ---- keypairname: singapore-KP --- Download ---- Launch Instances --- 
+
+Again change region to sydney --- instances --- connect ---- it will show command to be run on aws cli ---- chmod 400 Sydney-KP.pem ----- 
+
+Go to Command Prompt ---- ls ----
+it will list like
+OLD       Sydney-KP.pem
+chmod 400 Sydney-KP.pem    ---- succesfully
+paste command seen in page 
+It will ask are you sure you want to continue connecting (yes/no) -- yes
+
+AMAZON LINUX 2 AMI WILL BE displayed...........................................
+
+so we are logged innn to our instance------------ so we have done secure shell connection.
+
+then run command  ---- sudo yum update -y
+It will install all packages.
+
+Back to AWS management console again change region to singapore.--connect it to windows instance --- then to linux instance.
+
+Now we are going to learn how to connect from windows 2A instance.
+now,get password for administrator. ---- choose file ---- singapore-KP.pem --- decrypt password --- use public DNS copy --- use RDP client --- 
+
+PC name: add pc name
+
+click on add        /////////////paste password u got from decrypting file
+username: administartor
+password: paste it here
+
+continue
+
+this is to connect to windows from his computer.
+
+Now we are logging on to windows server using Amazon EC2.
+
+He is located in australia but server instance working in singapore.
+
+Download Putty  --- 64bit msi installer -- finish --- open puttygen from windows search --- we found key pair file for sydney --- open with --- notepad --- copy content----  save it as Sydney.kp.txt --- 
+
+In puttygen --- load ---  all files --- sydney-KP --- save --- ok --- save private key --- save it as ppk file.-----------done.
+
+Go to AWS managemeent console --- change region to sydney ----- copy DNS address from description board --- paste it in putty configuration --- in the begining specify ec2-user@DNS-naive
+
+Because this is instance connected to aws console --- now go to auth --- browse -- ppk file --- so we are logged into amazon linux AMI.
+
+Go to Actions ----instance state ---- terminate the instance ---- ***************------------ ALL DATA GONE
+
+---------------------------------************--------------------
+
+CREATE A WEBSITE USING USER DATA
+
+This is the script we are going to launch websites using user data
+
+yum update -y
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd
+cd /var/www/html
+echo "This is a test page running on Apache on EC2 in the AWS cloud">index.html
+
+# test with this command
+curl http://169.254.269.354/latest/user-data
 
 
