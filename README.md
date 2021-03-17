@@ -343,4 +343,58 @@ echo "This is a test page running on Apache on EC2 in the AWS cloud">index.html
 # test with this command
 curl http://169.254.269.354/latest/user-data
 
+Day - 7
+
+copy above script and paste it in user data
+
+Before that launch instance Amazon Linux AMI ---- select ---- instance type --- general purpose --- t2 micro --- next --- paste that script in user data --- next ---- select existing security group ---
+review and launch --- select existing key-pair --- launch instances.
+
+go to security group ---- select already created security group ---- edit inbound rules --- add rule --- HTTP ---- anywhere ---- for ipv4 and ipv6 ---- save rules ---- 
+
+Instances ---- status check --- or go to description --- copy ipv4 public ip --- and put it in browser and ----- output will be visible ---- This is a test page running on Apache on EC2 in the AWS cloud.
+
+------------------------------*****------------
+
+Using Access Keys with EC2 
+
+s3 bucket ---- upload certain objects into it and can be accessed from instance.
+
+Using IAM Roles with ec2:
+
+EC2 Instance will be covered by public subnet and is covered by availability zone and is covered by VPC and is covered by AWS cloud.
+
+Each EC2 Instance will be given IAM Role ---- Have Policy ---- s3 bucket.
+
+IAM ---- Roels ---- create role --- EC2 --- next --- attach permission policy --- s3 ---- ReadOnlyPermission --- next --- review --- Role Name --- s3 Read only ---- run command for s3 --- credentials are not satisfactory ---- instances --- Actions --- Instance settings --- Attach/Replace IAM role ---- s3 read only ---- In command line we have all privileges need for s3 for ec2 instance.
+
+Terminate instance
+
+---------------------*****************---------------------------
+
+Scale elastically with amazon ec2 auto scaling:
+Great Concept-----  Auto Scaling Group ------->>>
+If any instances are failed,,it will automatically assign new instances according to your requirement ,,, for that you need to manually edit auto-scaling.
+
+
+If EC2 status checks fail it will tell auto scaling group that it need to replaced with other instance.ASG replaces failed instance.and Metric reports are sent to Amazon Cloudwatch if CPU>80%
+It's perfomance is in good status.otherwise cloudWatch notifies Auto Scaling to scale.then Auto scaling launches extra instance.
+If metrics goes down again same thing will continue.
+
+auto scaling group ---- LC1 -- template name -- ASG1 ---launch template --- AMI -- Amazon Linux 2 AMI --- Instance type --- t2.micro ---  vpc --- web-access --- create launch template.
+
+configure settings --- select --- vpc -- subnets --- next --- configure advanced options --- next --- configure group size and scaling policies ---  desired capacity 3 --- minimum 2 --- max 4 ---next --- review. create auto scaling group.
+
+launching 3 instances 
+
+status check ---- passed healthy instances
+
+auto scaling group --- activity --- logs tell --- everything.
+
+terminate all instances.
+
+
+
+
+
 
