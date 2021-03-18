@@ -393,8 +393,54 @@ auto scaling group --- activity --- logs tell --- everything.
 
 terminate all instances.
 
+Day - 8
 
+Auto Scaling group will show activity history,About backup instances.
 
+CREATE A TARGET TRACKING SCALING POLICY
+
+Instances ---- Connect --- copy example url ---- copy --- in command prompt --- connected to one instance
+
+select another instance --- Connect --- copy example url ---- copy --- in command prompt --- connected to one instance
+
+repeat..........
+
+Auto Scaling Group ---- ASG1 --- Automatic Scaling --- add policy --- create scaling policy --- by default target value is 50 ----- create ---- adjust minimum and maximum group size --- min is 2 ---  max at 6 -- update 
+
+goodness of aws is you mentioned group size minimum to 2 so till cpu is overloaded with fifty only 2 instances will run ,,, if instances are overloaded then depending on load number of instances automatically increased by aws auto scaling group.
+
+#enable EPEL repo:
+sudo amazon-linux-extras install epel -y  // paste this to command line
+#install stress utility
+sudo yum install stress-y           // paste this to command line
+
+these commands will generate stress on instances.......!!!!!!!!!!!!!!!!!
+
+run command ------>   stress -c 8  /// 8 processes will added to each instance
+
+cloudwatch detailed monitoring will give 5 minutes history info.
+
+cpu utilization will raise drastically.
+
+so 2 more instances will automatically launched.
+
+now see auto-scaling-group activity history.
+
+auto-scaling-groups ---- ASG1 ---- delete ---- delete
+
+then all instances will shut down.
+
+------------------------------***********************--------------------
+
+ADD LOAD BALANCING WITH AMAZON ELB
+
+each user will be connected to elastic load balancer then it will route to each instance.  
+
+If some instance fails user is connected to diffrent instance seamlessly.
+
+and one more instance will be created and will be assigned to other user.
+
+EC2 --- load balancers --- create load balancer --- application load balancer --- create --- configure load balancer --- myalb --- protocol --- HTTP ---  select all availability zones --- create --- configure security settings --- Improve load balancer security --- next ---- configure security groups ---- select --- configure routing --- TG1 --- instance --- next --- review --- next.
 
 
 
