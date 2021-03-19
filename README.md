@@ -443,4 +443,70 @@ and one more instance will be created and will be assigned to other user.
 EC2 --- load balancers --- create load balancer --- application load balancer --- create --- configure load balancer --- myalb --- protocol --- HTTP ---  select all availability zones --- create --- configure security settings --- Improve load balancer security --- next ---- configure security groups ---- select --- configure routing --- TG1 --- instance --- next --- review --- next.
 
 
+Day - 9
+
+so now we need to attach load balancer to auto scaling group.
+
+go to amazon s3 service to create a new bucket. -- create bucket --- bucket-name --- create --- lets go into our bucket ---  add files --- under local folder --- code and files --- index.text and names.csv
+--- select --- upload --- 
+
+Here index.txt file acts as index.html file and names.csv gives name to each instance.
+
+EC2 --- launch templates --- create launch template --- name:LT1, Amazon Linux 2 AMI --- t2.micro --- 
+Web-Access security group --- advanced details --- IAM instance profile --- s3 read-only --- user data --- paste below commands 
+
+yum update -y
+yum install httpd -y
+systemctrl start httpd
+systemctrl enable httpd
+cd/var/www/html
+aws s3 cp s3://YOUR-BUCKET-NAME/names.csv ./         // YOUR-BUCKET-NAME is dct-user-data-lab
+aws s3 cp s3://YOUR-BUCKET-NAME/index.txt ./         // same here
+EC2NAME='cat' ./names.csv|sort -R|head -n 1|xargs'   // this line will name each instance
+sed"s/INSTANCEID/$EC2NAME/" index.txt > index.html   // this will create index.txt and will be converted to index.html
+
+create launch template.
+
+go to auto scaling groups --- create an auto-scaling group --- AutoScalingGroupName: ASG1 --- Launch Template --- LT1 --- next --- add multiple subnets in network --- next --- enable load balancing --- Target group1 ---  ELB health checks --- next --- group size 4 4 4 --- next --- review --- create auto scaling group.
+
+auto scaling group --- activity --- check activities
+
+EC2 --- Target Group --- TG1 --- there are 4 targets --- healthy status --- can monitor 
+
+EC2 --- Load Balancers --- Monitor --- analyze --- description --- copy dns name --- search in browser --- you will egt the output --- Your Amazon EC2 Instance's name is: Vela --- refresh name will change.
+
+Load Balancer --- action --- delete.
+
+target group --- action ---delete
+
+asg --- delete.
+
+check instances whether running .Dont leave instances to running it will cost you.
+
+-----------------------------*******************************----------------------------------
+
+AWS Storage Services::
+
+AWS Storage Services Overview::
+
+Block,File and Object Storage::
+
+Amazon Elastic Block Store(EBS) will be made of availability zone having Volume HDD/SSD and is connected to file system.
+
+so internet client is connected to object and is connected to Amazon S3.
+
+Create And Attach EBS volume::
+
+EC2 Instance will be mapped to local storage drives.
+
+                                        ssd                             hdd
+input/output per second                64000                            500
+Max Throughput/volume                 1000MB/s                         250 to 500MB/s
+
+
+EC2 --- Volumes --- Create Volume --- 
+
+
+
+
 
