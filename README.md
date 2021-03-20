@@ -504,9 +504,21 @@ input/output per second                64000                            500
 Max Throughput/volume                 1000MB/s                         250 to 500MB/s
 
 
-EC2 --- Volumes --- Create Volume --- 
+Day - 10
 
 
+EC2 --- Volumes --- Create Volume --- Provisional Iops SSD --- 10GiB --- 500 iops --- volume created.
 
+instances --- launch --- windows server --- next --- review and launch.
+
+Go to security groups --- inbound rules --- save rules add rule --- RDP --- 0.0.0.000 --- save rules --- connect to instance.
+
+you can connect your instance to volume.
+
+connect --- get password --- key pair file --- decrypt password --- copy public DNS and password .
+
+instance --- check --- attach volume --- instance --- attach.
+
+THE END------------------------------*******************************------------------------------------------------------------------------
 
 
